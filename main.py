@@ -1,3 +1,4 @@
+import sys
 def board(table):
     # For making stracture of table
         for r in range(len(table)):
@@ -38,23 +39,25 @@ try:
         for row in table:
             if row[0] == row[1]  == row[2] and row[0] in['X','O']:
                 print(f"{row[0]} is win!")
-                break
+                sys.exit()
+                
 
         # Checking winner in coloumn
         for col in range(3):
             if table[0][col] == table[1][col] == table[2][col] and table[0][col] in['X','O']:
                 print(f"{table[0][col]} is win!")
-                break
+                sys.exit()
 
         # Checking winner in right diognal
             if table[0][0] == table[1][1] ==table[2][2] and table[0][0] in ['X','O']:
                 print (f'{table[0][0]} is winner!')
-                break
+                sys.exit()
 
         # checking winner in left diognal
             if table[0][2] == table[1][1] ==table[2][0] and table[0][2] in ['X','O']:
                 print (f'{table[0][2]} is winner!')
-                break
+                sys.exit()
+                 
                 
         # Turning moves one player to another player
         if turn == 'X':
